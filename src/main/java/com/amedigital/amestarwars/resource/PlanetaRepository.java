@@ -1,4 +1,4 @@
-package com.amedigital.amestarwars.repository;
+package com.amedigital.amestarwars.resource;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class PlanetaRepository {
 	private MongoTemplate mongo;
 
 	@SuppressWarnings("deprecation")
-	public void add(Planeta planeta) throws Exception {
+	public Planeta add(Planeta planeta) throws Exception {
 
 		if (!mongo.collectionExists(Planeta.class)) {
 			mongo.createCollection(Planeta.class);
@@ -35,6 +35,8 @@ public class PlanetaRepository {
 		}
 		
 		mongo.insert(planeta, PLANETA_COLLECTION_NAME);
+		
+		return planeta;
 	}
 	
 	public List<Planeta> findAll() throws Exception {
