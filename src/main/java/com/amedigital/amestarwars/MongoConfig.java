@@ -2,7 +2,6 @@ package com.amedigital.amestarwars;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -15,7 +14,6 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import com.mongodb.MongoClient;
 
 @Configuration
-@ComponentScan(basePackages = { "com.amedigital.amestarwars.*" })
 @PropertySource(value = "classpath:config.properties", ignoreResourceNotFound = true)
 public class MongoConfig {
 
