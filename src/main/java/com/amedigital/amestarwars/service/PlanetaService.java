@@ -94,8 +94,7 @@ public class PlanetaService {
             			+ "(KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
             HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 
-            ResponseEntity<Planet> response = restTemplate.exchange(uri, 
-            								  HttpMethod.GET, entity, Planet.class);
+            ResponseEntity<Planet> response = restTemplate.exchange(uri, HttpMethod.GET, entity, Planet.class);
             Planet planet = response.getBody();
             
 			this.add(planet.planetToPlaneta());
