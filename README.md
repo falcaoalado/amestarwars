@@ -15,18 +15,18 @@ A parte imutável para os endpoints é: **127.0.0.1:8080/api/planeta**
 ##### /carregaMassa
 A fim de facilitar a utilização do projeto, esse método faz a carga para o banco de dados de 61 planetas, pegando tais informações do site https://swapi.co . Tal método é alguns segundos mais demorado que o restante, visto que são carregadas informações de uma origem externa.
 
-##### /listar
+##### /
 Lista todos os planetas
 
-##### /listar/nome/{nome}
+##### /nome/{nome}
 Faz uma busca pelo nome do planeta
 
-##### /listar/id/{id}
+##### /id/{id}
 Faz uma busca pelo id do planeta
 
 #### Método POST
 
-##### /adicionar
+##### /
 Através de um JSON, se é adicionado um planeta ao banco de dados. Exemplo de JSON:
 
 > {
@@ -40,7 +40,7 @@ Observação: nome, clima e terreno são requeridos, logo podem até ser vazios,
 
 #### Método DELETE
 
-##### /deletar/{id}
+##### /{id}
 Utilizando o ID como referência, é possível remover planetas do banco de dados
 
 # ambiente
