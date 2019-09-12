@@ -30,31 +30,31 @@ public class PlanetaResource {
 	@Autowired
 	private PlanetaService planetaService;
 
-	@PostMapping(value = "/adicionar")
+	@PostMapping(value = "/")
 	public ResponseEntity<Planeta> adicionar(@RequestBody Planeta planeta) throws Exception {
 		planeta = planetaService.add(planeta);
 		return new ResponseEntity<Planeta>(planeta, HttpStatus.CREATED);
 	}
 	
-	@GetMapping(value = "/listar")
+	@GetMapping(value = "/")
 	public ResponseEntity<List<Planeta>> listar() throws Exception {
 		List<Planeta> planetas = planetaService.findAll();
 		return new ResponseEntity<List<Planeta>>(planetas, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/listar/nome/{nome}")
+	@GetMapping(value = "/nome/{nome}")
 	public ResponseEntity<Planeta> buscaPorNome(@PathVariable String nome) throws Exception {
 		Planeta planeta = planetaService.findByName(nome);
 		return new ResponseEntity<Planeta>(planeta, HttpStatus.FOUND);
 	}
 
-	@GetMapping(value = "/listar/id/{id}")
+	@GetMapping(value = "/id/{id}")
 	public ResponseEntity<Planeta> buscarPorId(@PathVariable String id) throws Exception {
 		Planeta planeta = planetaService.findById(id);
 		return new ResponseEntity<Planeta>(planeta, HttpStatus.FOUND);
 	}
 
-	@DeleteMapping(value = "/deletar/{id}")
+	@DeleteMapping(value = "/{id}")
 	public HttpStatus remover(@PathVariable String id) throws NumberFormatException, Exception {
 		planetaService.remover(id);
 		return HttpStatus.ACCEPTED;
